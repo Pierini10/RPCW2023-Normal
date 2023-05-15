@@ -1,10 +1,8 @@
 1.1
-de modo a haver um id em cada objecto, fez-se o programa addID.js para adicionar
+De modo a haver um id em cada objecto, fez-se o programa addID.js para adicionar.
 
-para carregar a base de dados, corri o comando:
+Para carregar a base de dados, corri o comando:
 mongoimport --db scienceJobs --collection contracts --file emprego-cientifico.json --jsonArray
-
-com o mongosh verifiquei com os comandos use que está no mongo
 
 1.2
 
@@ -32,3 +30,7 @@ db.contracts.aggregate([{ $group: { _id: { $year: { $dateFromString: { dateStrin
 Qual a distribuição dos contratos por instituição?
 db.contracts.aggregate([{ $group: { _id: "$NomeInstituicao", numContracts: { $sum: 1 } } }])
 
+
+Para executar a API, entrar na diretoria api dentro do ex1 e executar npm start.
+
+Para executar o frontend, entrar na diretoria ex2 e executar npm start.
