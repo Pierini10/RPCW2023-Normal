@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 Site de Contratos
+  table.w3-table-all
+    tr
+      th Id
+      th Data de ínicio do contrato
+      th Data de fim do contrato
+      th Nome da Instituição
+      th Área de Investigação
+    each c in contracts
+      tr
+        td
+          a(href='/' + c.Id) #{c.Id}
+        td #{c.DataInicioContrato}
+        td #{c.DataFimContrato}
+        td 
+          a(href='/inst/' + c.NomeInstituicao) #{c.NomeInstituicao}
+        td #{c.AreasInvestigacao}
